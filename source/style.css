@@ -605,6 +605,7 @@ button:hover {
   align-items: center;
   gap: 2rem;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .services .services-info {
