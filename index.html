@@ -3,6 +3,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NG-SOFT</title>
   <link rel="stylesheet" href="source\style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
 </head>
 
 <body>
@@ -232,7 +240,7 @@
       <div class="card">
         <img src="source\phone.png" alt="Profile" class="profile-img" />
         <div class="glass">
-          <h2>По телефону<br /><i>+7 777 777 77 77</i></h2>
+          <h2>По телефону<br /><i>+7 (495) 682-26-20</i></h2>
         </div>
       </div>
 
@@ -251,80 +259,56 @@
       </div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <div class="our-projects">
     <div class="our-projects-info" id="our-project-info-id">
       <h2>Наши проеты</h2>
     </div>
-    <div class="carousel">
-      <div class="carousel-inner">
-        <input
-          class="carousel-open"
-          type="radio"
-          id="carousel-1"
-          name="carousel"
-          aria-hidden="true"
-          hidden=""
-          checked="checked"
-        />
-        <div class="carousel-item">
-          <p id="title">Личный Кабинет для ОАО «Волгограднефтемаш»</p>
-          <img src="source/VNM.png" />
+    <div class="carousel-container">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Слайды -->
+          <div class="swiper-slide">
+            <img src="source/VNM.png" />
+            <div class="caption">
+              Личный кабинет для ОАО «Волгограднефтемаш»
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="source/TDM.png" />
+            <div class="caption">
+              Интернет магазин для ООО "Торговый Дом Магистраль"
+            </div>
+          </div>
+          <!-- для расширения -->
         </div>
-        <input
-          class="carousel-open"
-          type="radio"
-          id="carousel-2"
-          name="carousel"
-          aria-hidden="true"
-          hidden=""
-        />
-        <div class="carousel-item">
-          <p id="title">Слайд 2</p>
-          <img src="source/VNM.png" />
-        </div>
-        <input
-          class="carousel-open"
-          type="radio"
-          id="carousel-3"
-          name="carousel"
-          aria-hidden="true"
-          hidden=""
-        />
-        <div class="carousel-item">
-          <p id="title">Слайд 3</p>
-          <img src="source/VNM.png" />
-        </div>
-        <label for="carousel-3" class="carousel-control prev control-1"
-          >‹</label
-        >
-        <label for="carousel-2" class="carousel-control next control-1"
-          >›</label
-        >
-        <label for="carousel-1" class="carousel-control prev control-2"
-          >‹</label
-        >
-        <label for="carousel-3" class="carousel-control next control-2"
-          >›</label
-        >
-        <label for="carousel-2" class="carousel-control prev control-3"
-          >‹</label
-        >
-        <label for="carousel-1" class="carousel-control next control-3"
-          >›</label
-        >
-        <ol class="carousel-indicators">
-          <li>
-            <label for="carousel-1" class="carousel-bullet">•</label>
-          </li>
-          <li>
-            <label for="carousel-2" class="carousel-bullet">•</label>
-          </li>
-          <li>
-            <label for="carousel-3" class="carousel-bullet">•</label>
-          </li>
-        </ol>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
+    <footer id="footer">
+      <div class="col col1">
+        <h3><img src="source/nglogo.png" alt="Logo" class="logo-icon" /></h3>
+        <h3>Ng-Soft</h3>
+        <p>
+          Мы занимается разработкой программного обеспечения и сайтов для России
+          с 2020 года.
+        </p>
+        <p style="color: #818181; font-size: smaller">
+          2024 © Все права защищены
+        </p>
+      </div>
+      <div class="col col2">
+        <p>
+          <i class="fas fa-map-marker-alt"></i>⠀г. Москва, ул. 1-я Мытищинская
+          28, стр.1, Россия
+        </p>
+        <p><i class="fas fa-phone-alt"></i>⠀+7 (495) 682-26-20</p>
+        <p><i class="fas fa-envelope"></i>⠀Info@ng-soft.ru</p>
+      </div>
+    </footer>
   </div>
 </body>
