@@ -1040,7 +1040,7 @@ footer::before {
   position: absolute;
   display: inline-block;
   content: "";
-  background: #ffffff; /* замените на нужный цвет */
+  background: #ffffff;
   width: 5px;
   height: 40px;
   top: 50%;
@@ -1055,8 +1055,8 @@ footer::before {
   content: "";
   width: 20px;
   height: 20px;
-  border-top: 5px solid #ffffff; /* замените на нужный цвет */
-  border-left: 5px solid #ffffff; /* замените на нужный цвет */
+  border-top: 5px solid #ffffff;
+  border-left: 5px solid #ffffff;
   transform: rotateZ(45deg);
   top: 50%;
   left: 50%;
@@ -1083,7 +1083,6 @@ footer::before {
   }
 }
 
-/* Для экранов с шириной менее 768px (мобильные устройства) */
 @media (max-width: 768px) {
   nav {
     visibility: hidden;
