@@ -73,10 +73,54 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400%;
+  height: 500%;
   overflow-x: hidden;
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
+}
+
+#sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 20%;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.progress-bar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid var(--secondary);
+  border-radius: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--secondary);
+  border-radius: 1rem;
+}
+
+li:hover {
+  background-color: var(--hover);
+}
+
+.progress-bar:hover li {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+li.active {
+  background-color: var(--accent);
 }
 
 nav {
@@ -151,26 +195,26 @@ nav {
   text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.11);
 }
 
-.title > p {
+.title>p {
   margin: 0;
   line-height: 8rem;
   width: auto;
 }
 
-.title > p:nth-child(1) {
+.title>p:nth-child(1) {
   align-self: flex-start;
 }
 
-.title > p:nth-child(2) {
+.title>p:nth-child(2) {
   color: var(--primary);
   align-self: flex-end;
 }
 
-.title > p:nth-child(3) {
+.title>p:nth-child(3) {
   align-self: center;
 }
 
-.title > p:nth-child(4) {
+.title>p:nth-child(4) {
   align-self: flex-end;
 }
 
@@ -297,12 +341,9 @@ p {
 
   .g1 {
     position: absolute;
-    background: radial-gradient(
-        circle at center,
+    background: radial-gradient(circle at center,
         rgba(var(--color1), 0.8) 0,
-        rgba(var(--color1), 0) 50%
-      )
-      no-repeat;
+        rgba(var(--color1), 0) 50%) no-repeat;
     mix-blend-mode: var(--blending);
 
     width: var(--circle-size);
@@ -318,12 +359,9 @@ p {
 
   .g2 {
     position: absolute;
-    background: radial-gradient(
-        circle at center,
+    background: radial-gradient(circle at center,
         rgba(var(--color2), 0.8) 0,
-        rgba(var(--color2), 0) 50%
-      )
-      no-repeat;
+        rgba(var(--color2), 0) 50%) no-repeat;
     mix-blend-mode: var(--blending);
 
     width: var(--circle-size);
@@ -339,12 +377,9 @@ p {
 
   .g3 {
     position: absolute;
-    background: radial-gradient(
-        circle at center,
+    background: radial-gradient(circle at center,
         rgba(var(--color3), 0.8) 0,
-        rgba(var(--color3), 0) 50%
-      )
-      no-repeat;
+        rgba(var(--color3), 0) 50%) no-repeat;
     mix-blend-mode: var(--blending);
 
     width: var(--circle-size);
@@ -360,12 +395,9 @@ p {
 
   .g4 {
     position: absolute;
-    background: radial-gradient(
-        circle at center,
+    background: radial-gradient(circle at center,
         rgba(var(--color4), 0.8) 0,
-        rgba(var(--color4), 0) 50%
-      )
-      no-repeat;
+        rgba(var(--color4), 0) 50%) no-repeat;
     mix-blend-mode: var(--blending);
 
     width: var(--circle-size);
@@ -381,12 +413,9 @@ p {
 
   .g5 {
     position: absolute;
-    background: radial-gradient(
-        circle at center,
+    background: radial-gradient(circle at center,
         rgba(var(--color5), 0.8) 0,
-        rgba(var(--color5), 0) 50%
-      )
-      no-repeat;
+        rgba(var(--color5), 0) 50%) no-repeat;
     mix-blend-mode: var(--blending);
 
     width: calc(var(--circle-size) * 2);
@@ -402,12 +431,9 @@ p {
 
   .interactive {
     position: absolute;
-    background: radial-gradient(
-        circle at center,
+    background: radial-gradient(circle at center,
         rgba(var(--color-interactive), 0.8) 0,
-        rgba(var(--color-interactive), 0) 50%
-      )
-      no-repeat;
+        rgba(var(--color-interactive), 0) 50%) no-repeat;
     mix-blend-mode: var(--blending);
 
     width: 100%;
@@ -421,18 +447,14 @@ p {
 
 button {
   -webkit-appearance: none;
-  background: -webkit-gradient(
-    to right,
-    var(--green) 0%,
-    var(--sand) 50%,
-    var(--peach) 100%
-  );
-  background: linear-gradient(
-    to right,
-    var(--green) 0%,
-    var(--sand) 50%,
-    var(--peach) 100%
-  );
+  background: -webkit-gradient(to right,
+      var(--green) 0%,
+      var(--sand) 50%,
+      var(--peach) 100%);
+  background: linear-gradient(to right,
+      var(--green) 0%,
+      var(--sand) 50%,
+      var(--peach) 100%);
   background-size: 500%;
   border: none;
   border-radius: 5rem;
@@ -482,7 +504,7 @@ button:hover {
   width: 100%;
   display: flex;
   padding: 2rem 10%;
-  top: 195%;
+  top: 395%;
   bottom: 0;
   position: absolute;
   z-index: 1000;
@@ -490,6 +512,7 @@ button:hover {
   align-items: center;
   gap: 2rem;
   flex-direction: column;
+
 }
 
 .contact .contact-info {
@@ -529,7 +552,7 @@ button:hover {
 .card .glass {
   position: relative;
   width: 250px;
-  height: 300px;
+  height: 295px;
   background: rgba(255, 255, 255, 0.103);
   border-radius: 20px;
   border: 1px solid #fff;
@@ -573,24 +596,18 @@ button:hover {
   height: 75px;
   margin-bottom: 75px;
 
-  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7))
-    drop-shadow(0 0 25px rgba(255, 255, 255, 0.5))
-    drop-shadow(0 0 35px rgba(255, 255, 255, 0.1));
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 35px rgba(255, 255, 255, 0.1));
 
   animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
   0% {
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7))
-      drop-shadow(0 0 25px rgba(255, 255, 255, 0.5))
-      drop-shadow(0 0 35px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 35px rgba(255, 255, 255, 0.3));
   }
 
   100% {
-    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 1))
-      drop-shadow(0 0 35px rgba(255, 255, 255, 0.8))
-      drop-shadow(0 0 45px rgba(255, 255, 255, 0.6));
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 1)) drop-shadow(0 0 35px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 45px rgba(255, 255, 255, 0.6));
   }
 }
 
@@ -701,7 +718,7 @@ button:hover {
   width: 100%;
   display: flex;
   padding: 2rem 10%;
-  top: 270%;
+  top: 295%;
   position: absolute;
   z-index: 1000;
   text-align: center;
@@ -795,6 +812,7 @@ footer {
   padding: 1rem 5vw;
   bottom: 0;
   position: relative;
+  margin-top: 100px;
 }
 
 footer::before {
@@ -802,14 +820,12 @@ footer::before {
   position: absolute;
   bottom: 0;
   inset: 0;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0) 5%,
-    rgba(0, 0, 0, 0.3) 20%,
-    rgba(0, 0, 0, 0.6) 30%,
-    rgba(0, 0, 0, 0.8) 40%,
-    rgba(0, 0, 0, 1) 50%,
-    rgb(0, 0, 0)
-  );
+  background: linear-gradient(rgba(18, 18, 18, 0) 5%,
+      rgba(18, 18, 18, 0.3) 20%,
+      rgba(18, 18, 18, 0.6) 30%,
+      rgba(18, 18, 18, 0.8) 40%,
+      rgba(18, 18, 18, 1) 50%,
+      rgb(18, 18, 18));
   z-index: -1;
 }
 
@@ -837,4 +853,112 @@ footer::before {
 .col img {
   height: 50px;
   width: 50px;
+}
+
+.about-us {
+  width: 100%;
+  padding: 2rem 10%;
+  top: 195%;
+  bottom: 0;
+  position: absolute;
+  z-index: 1000;
+}
+
+.about-us-title {
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.content {
+  display: flex;
+  gap: 6rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 70%;
+  left: 15%;
+}
+
+.about-us .about-us-info {
+  flex: 1;
+  text-align: right;
+}
+
+.description {
+  flex: 1;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.description .highlight {
+  color: #58ff6f;
+  font-weight: 700;
+}
+
+
+.editor {
+  width: 450px;
+  background: rgba(18, 18, 18, 0.8);
+  font-family: monospace;
+  font-size: 15px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  margin-top: 100px;
+}
+
+.editor .buttons {
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(45, 55, 65);
+  padding: 10px;
+}
+
+.editor .button {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.editor .button:nth-child(1) {
+  background: rgb(250, 50, 50);
+}
+
+.editor .button:nth-child(2) {
+  background: rgb(250, 250, 50);
+}
+
+.editor .button:nth-child(3) {
+  background: rgb(50, 250, 50);
+}
+
+.editor .editor-content {
+  padding: 15px;
+}
+
+.editor .editor-content .editor-line {
+  margin: 5px;
+  color: rgb(195, 215, 225);
+  counter-increment: line;
+}
+
+.editor .editor-content .editor-line::before {
+  content: counter(line);
+  margin-right: 15px;
+}
+
+.editor .editor-content .editor-line span.tab {
+  margin-right: 15px;
+}
+
+.editor .editor-content .editor-line span.tab {
+  margin-right: 15px;
+}
+
+.editor .editor-content .editor-line span.element {
+  color: rgb(100, 150, 250);
+}
+
+.editor .editor-content .editor-line span.quotes {
+  color: rgb(150, 150, 150);
 }
