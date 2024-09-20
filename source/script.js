@@ -32,6 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var aboutusectslement = document.getElementById("about-us-link");
   var projectsButton = document.getElementById("our-projects-button");
   var targetProjectslement = document.getElementById("our-project-info-id");
+  var upButton = document.getElementById("up-button");
+  var targetUpButton = document.getElementById("services-button");
+
+
+  upButton.addEventListener("click", function () {
+    targetUpButton.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 
   aboutusButton.addEventListener("click", function () {
     aboutusectslement.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -114,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Создаем объект Intersection Observer
+
   const observer = new IntersectionObserver(handleIntersection, {
     root: null,
     rootMargin: "0px",
@@ -127,4 +134,13 @@ document.addEventListener("DOMContentLoaded", () => {
     line.setAttribute("data-text", line.textContent);
     line.textContent = ""; 
   });
+});
+
+window.addEventListener('scroll', function() {
+  const arrow = document.querySelector('.arrow');
+  if (window.scrollY > 300) {
+    arrow.classList.add('visible');
+  } else {
+    arrow.classList.remove('visible');
+  }
 });
