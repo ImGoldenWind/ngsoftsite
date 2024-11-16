@@ -15,54 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("mousemove", (event) => {
-    tgX = event.clientX;
-    tgY = event.clientY;
+    tgX = event.pageX;
+    tgY = event.pageY;
   });
 
   move();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  var contactButton = document.getElementById("contact-us-button");
-  var contactMenuItem = document.getElementById("contact-us-link");
-  var servicesButton = document.getElementById("services-button");
-  var targetContactElement = document.getElementById("contact-us");
-  var targetServicesElement = document.getElementById("services-info-id");
-  var aboutusButton = document.getElementById("about-us-button");
-  var aboutusectslement = document.getElementById("about-us-link");
-  var projectsButton = document.getElementById("our-projects-button");
-  var targetProjectslement = document.getElementById("our-project-info-id");
-  var upButton = document.getElementById("up-button");
-  var targetUpButton = document.getElementById("services-button");
 
 
-  upButton.addEventListener("click", function () {
-    targetUpButton.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-
-  aboutusButton.addEventListener("click", function () {
-    aboutusectslement.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-
-  servicesButton.addEventListener("click", function () {
-    targetServicesElement.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  });
-
-  contactButton.addEventListener("click", function () {
-    targetContactElement.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-
-  contactMenuItem.addEventListener("click", function () {
-    targetContactElement.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-
-  projectsButton.addEventListener("click", function () {
-    targetProjectslement.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   var swiper = new Swiper(".mySwiper", {
@@ -121,26 +82,59 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   const observer = new IntersectionObserver(handleIntersection, {
     root: null,
     rootMargin: "0px",
-    threshold: 1.0, 
+    threshold: 1.0,
   });
 
   observer.observe(lines[0]);
 
   lines.forEach((line) => {
     line.setAttribute("data-text", line.textContent);
-    line.textContent = ""; 
+    line.textContent = "";
   });
 });
 
-window.addEventListener('scroll', function() {
-  const arrow = document.querySelector('.arrow');
+window.addEventListener("scroll", function () {
+  const arrow = document.querySelector(".arrow");
   if (window.scrollY > 300) {
-    arrow.classList.add('visible');
+    arrow.classList.add("visible");
   } else {
-    arrow.classList.remove('visible');
+    arrow.classList.remove("visible");
   }
+});
+
+
+
+const items = document.querySelectorAll(".accordion button");
+
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+  
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+  
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach(item => item.addEventListener('click', toggleAccordion));
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollElements = document.querySelectorAll(".menu, .arrow");
+
+  scrollElements.forEach(item => {
+    item.addEventListener("click", function () {
+      const targetId = this.getAttribute("data-target");
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
 });
