@@ -1294,12 +1294,34 @@ details[open] .control-icon-expand {
 }
 
 @media (max-width: 768px) {
-  #mainTitle {
+  nav {
+    align-items: flex-start;
+    font-size: 12px;
+  }
+
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .menu {
     display: none;
+  }
+
+  nav > :last-child {
+    display: block;
+    margin-left: 0;
+    margin-top: 17px;
+  }
+
+  #mainTitle {
+    margin-bottom: 18px;
   }
 
   .main-block {
     flex-direction: column;
+    margin-top: 0px;
   }
 
   #contact-us-button {
