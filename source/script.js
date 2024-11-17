@@ -22,9 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   move();
 });
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
@@ -105,29 +102,26 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
-
 const items = document.querySelectorAll(".accordion button");
 
 function toggleAccordion() {
-  const itemToggle = this.getAttribute('aria-expanded');
-  
+  const itemToggle = this.getAttribute("aria-expanded");
+
   for (i = 0; i < items.length; i++) {
-    items[i].setAttribute('aria-expanded', 'false');
+    items[i].setAttribute("aria-expanded", "false");
   }
-  
-  if (itemToggle == 'false') {
-    this.setAttribute('aria-expanded', 'true');
+
+  if (itemToggle == "false") {
+    this.setAttribute("aria-expanded", "true");
   }
 }
 
-items.forEach(item => item.addEventListener('click', toggleAccordion));
-
+items.forEach((item) => item.addEventListener("click", toggleAccordion));
 
 document.addEventListener("DOMContentLoaded", function () {
   const scrollElements = document.querySelectorAll(".menu, .arrow");
 
-  scrollElements.forEach(item => {
+  scrollElements.forEach((item) => {
     item.addEventListener("click", function () {
       const targetId = this.getAttribute("data-target");
       const targetElement = document.getElementById(targetId);
